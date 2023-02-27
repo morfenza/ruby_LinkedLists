@@ -83,7 +83,21 @@ class LinkedList
     false
   end
 
-  def find(value); end
+  def find(value)
+    node_index = 0
+    current_node = head
+
+    return nil if current_node.nil?
+
+    until current_node.nil?
+      return node_index if current_node.value == value
+
+      current_node = current_node.next_node
+      node_index += 1
+    end
+
+    nil
+  end
 
   def to_s
     current_node = head
@@ -98,32 +112,3 @@ class LinkedList
     end
   end
 end
-
-list = LinkedList.new
-
-list.append(10)
-list.append('Mermas')
-list.append(20)
-
-list.prepend(5)
-
-list.to_s
-
-puts "\nThere are #{list.size} nodes in this list!"
-
-puts "\nThe node at index 2 is: "
-p list.at(2)
-
-list.pop
-
-puts
-list.to_s
-
-puts "\nThe list contains the value 10? #{list.contains?(10)}"
-puts "The list contains the value 30? #{list.contains?(30)}"
-
-puts "\nList head: "
-p list.head
-
-puts "\nList tail: "
-p list.tail
