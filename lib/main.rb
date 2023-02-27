@@ -31,6 +31,15 @@ p list.find(10)
 puts "\nWhats the index of the node with value 40?"
 p list.find(40)
 
+puts
+list.insert_at(17, 2)
+list.insert_at(19, 2)
+list.to_s
+
+puts
+list.remove_at(2)
+list.to_s
+
 puts "\nList head: "
 p list.head
 
