@@ -19,7 +19,18 @@ class LinkedList
     self.tail = tmp
   end
 
-  def prepend(value); end
+  def prepend(value)
+    tmp = Node.new(value)
+
+    if head.nil?
+      self.head = tmp
+      self.tail = tmp
+      return
+    end
+
+    tmp.next_node = head
+    self.head = tmp
+  end
 
   def size; end
 
@@ -54,6 +65,8 @@ list = LinkedList.new
 list.append(10)
 list.append('Mermas')
 list.append(20)
+
+list.prepend(5)
 
 list.to_s
 p list.head
