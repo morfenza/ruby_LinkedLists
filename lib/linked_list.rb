@@ -44,7 +44,17 @@ class LinkedList
     end
   end
 
-  def at(index); end
+  def at(index)
+    node_index = 0
+    current_node = head
+
+    until node_index == index
+      current_node = current_node.next_node
+      node_index += 1
+    end
+
+    current_node
+  end
 
   def insert_at(value, index); end
 
@@ -79,7 +89,16 @@ list.append(20)
 list.prepend(5)
 
 list.to_s
+
+puts
 puts "There are #{list.size} nodes in this list!"
 
+puts
+puts 'The node at index 2 is: '
+p list.at(2)
+
+puts
 p list.head
+
+puts
 p list.tail
