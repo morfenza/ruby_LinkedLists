@@ -4,15 +4,17 @@ require_relative 'node'
 
 # Class defininf the linked lists, which uses nodes
 class LinkedList
+  attr_accessor :head, :tail
+
+  def initialize(value, next_node)
+    self.head, self.tail = Node.new(value, next_node)
+  end
+
   def append(value); end
 
   def prepend(value); end
 
   def size; end
-
-  def head(value); end
-
-  def tail(value); end
 
   def at(index); end
 
@@ -28,3 +30,4 @@ class LinkedList
 
   def to_s; end
 end
+
