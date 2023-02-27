@@ -12,7 +12,9 @@ class LinkedList
 
   def append(value); end
 
-  def prepend(value); end
+  def prepend(value)
+    self.head = Node.new(value, head.next_node)
+  end
 
   def size; end
 
