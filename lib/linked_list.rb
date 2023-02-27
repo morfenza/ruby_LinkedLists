@@ -6,15 +6,13 @@ require_relative 'node'
 class LinkedList
   attr_accessor :head, :tail
 
-  def initialize(value)
-    self.head, self.tail = Node.new(value)
+  def initialize
+    self.head, self.tail = Node.new
   end
 
   def append(value); end
 
-  def prepend(value)
-    self.head = Node.new(value, head.next_node)
-  end
+  def prepend(value); end
 
   def size; end
 
@@ -30,6 +28,20 @@ class LinkedList
 
   def find(value); end
 
-  def to_s; end
+  def to_s
+    current_node = head
+    loop do
+      if current_node.nil?
+        print "nil\n"
+        break
+      end
+
+      print "(#{current_node.value}) -> "
+      current_node = current_node.next_node
+    end
+  end
 end
 
+list = LinkedList.new
+
+list.to_s
