@@ -32,7 +32,17 @@ class LinkedList
     self.head = tmp
   end
 
-  def size; end
+  def size
+    nodes = 0
+    current_node = head
+
+    loop do
+      return nodes if current_node.nil?
+
+      nodes += 1
+      current_node = current_node.next_node
+    end
+  end
 
   def at(index); end
 
@@ -69,5 +79,7 @@ list.append(20)
 list.prepend(5)
 
 list.to_s
+puts "There are #{list.size} nodes in this list!"
+
 p list.head
 p list.tail
