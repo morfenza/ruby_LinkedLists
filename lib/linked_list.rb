@@ -60,7 +60,14 @@ class LinkedList
 
   def remove_at(index); end
 
-  def pop; end
+  def pop
+    current_node = head
+
+    current_node = current_node.next_node until current_node.next_node == tail
+
+    current_node.next_node = nil
+    self.tail = current_node
+  end
 
   def contains?(value); end
 
@@ -96,6 +103,12 @@ puts "There are #{list.size} nodes in this list!"
 puts
 puts 'The node at index 2 is: '
 p list.at(2)
+
+puts
+list.pop
+
+puts
+list.to_s
 
 puts
 p list.head
