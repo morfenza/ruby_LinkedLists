@@ -6,11 +6,18 @@ require_relative 'node'
 class LinkedList
   attr_accessor :head, :tail
 
-  def initialize
-    self.head, self.tail = Node.new
-  end
+  def append(value)
+    tmp = Node.new(value)
 
-  def append(value); end
+    if head.nil?
+      self.head = tmp
+      self.tail = tmp
+      return
+    end
+
+    tail.next_node = tmp
+    self.tail = tmp
+  end
 
   def prepend(value); end
 
@@ -44,4 +51,10 @@ end
 
 list = LinkedList.new
 
+list.append(10)
+list.append('Mermas')
+list.append(20)
+
 list.to_s
+p list.head
+p list.tail
