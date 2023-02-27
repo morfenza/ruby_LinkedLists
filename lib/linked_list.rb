@@ -80,8 +80,21 @@ class LinkedList
   end
   # rubocop:enable Metrics/MethodLength
 
+  def remove_at(index)
+    node_index = 0
+    current_node = head
 
-  def remove_at(index); end
+    return nil if current_node.nil?
+
+    until node_index == index - 1
+      return nil if node_index > index
+
+      current_node = current_node.next_node
+      node_index += 1
+    end
+
+    current_node.next_node = current_node.next_node.next_node
+  end
 
   def pop
     current_node = head
