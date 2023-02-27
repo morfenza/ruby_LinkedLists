@@ -2,7 +2,8 @@
 
 require_relative 'node'
 
-# Class defininf the linked lists, which uses nodes
+# Class defining the linked lists, which uses the node class
+# rubocop:disable Metrics/ClassLength
 class LinkedList
   attr_accessor :head, :tail
 
@@ -148,3 +149,4 @@ class LinkedList
     end
   end
 end
+# rubocop:enable Metrics/ClassLength
