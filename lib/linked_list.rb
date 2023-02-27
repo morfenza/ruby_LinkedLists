@@ -48,7 +48,11 @@ class LinkedList
     node_index = 0
     current_node = head
 
+    return nil if current_node.nil?
+
     until node_index == index
+      return nil if node_index > index
+
       current_node = current_node.next_node
       node_index += 1
     end
@@ -56,7 +60,26 @@ class LinkedList
     current_node
   end
 
-  def insert_at(value, index); end
+  # rubocop:disable Metrics/MethodLength
+  def insert_at(value, index)
+    node_index = 0
+    current_node = head
+    tmp = Node.new(value)
+
+    return nil if current_node.nil?
+
+    until node_index == index - 1
+      return nil if node_index > index
+
+      current_node = current_node.next_node
+      node_index += 1
+    end
+
+    tmp.next_node = current_node.next_node
+    current_node.next_node = tmp
+  end
+  # rubocop:enable Metrics/MethodLength
+
 
   def remove_at(index); end
 
