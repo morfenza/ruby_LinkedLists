@@ -6,8 +6,8 @@ require_relative 'node'
 class LinkedList
   attr_accessor :head, :tail
 
-  def initialize(value, next_node)
-    self.head, self.tail = Node.new(value, next_node)
+  def initialize(value)
+    self.head, self.tail = Node.new(value)
   end
 
   def append(value); end
