@@ -69,7 +69,19 @@ class LinkedList
     self.tail = current_node
   end
 
-  def contains?(value); end
+  def contains?(value)
+    current_node = head
+
+    return false if head.nil?
+
+    until current_node.nil?
+      return true if current_node.value.eql? value
+
+      current_node = current_node.next_node
+    end
+
+    false
+  end
 
   def find(value); end
 
@@ -97,21 +109,21 @@ list.prepend(5)
 
 list.to_s
 
-puts
-puts "There are #{list.size} nodes in this list!"
+puts "\nThere are #{list.size} nodes in this list!"
 
-puts
-puts 'The node at index 2 is: '
+puts "\nThe node at index 2 is: "
 p list.at(2)
 
-puts
 list.pop
 
 puts
 list.to_s
 
-puts
+puts "\nThe list contains the value 10? #{list.contains?(10)}"
+puts "The list contains the value 30? #{list.contains?(30)}"
+
+puts "\nList head: "
 p list.head
 
-puts
+puts "\nList tail: "
 p list.tail
