@@ -1,10 +1,10 @@
 # Ruby Linked List
 Project: Linked Lists from [The Odin Project](https://www.theodinproject.com/about), in this project I've implemented a singly linked list in Ruby
 
-# Links
+## Links
 - [Link to the assignment](https://www.theodinproject.com/lessons/ruby-linked-lists)
 
-# Implemented Methods 
+## Implemented Methods 
 | Method        | Description   |
 | ------------- |:-------------|
 | #append(value)     | Adds a new node containing value to the end of the list |
@@ -20,7 +20,7 @@ Project: Linked Lists from [The Odin Project](https://www.theodinproject.com/abo
 | #find(value) | Returns the index of the node containing value, or nil if not found.    |
 | #to_s | Represent your LinkedList objects as strings, so you can print them out and preview them in the console.    |
 
-# Testing locally
+## Testing locally
 ```console
 ruby lib/main.rb
 ```
